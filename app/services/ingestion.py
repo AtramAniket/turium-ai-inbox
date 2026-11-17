@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from app.models.items import Item
+from app.models.item import Item
 from app.schemas.ingest import IngestRequest
 from app.services.extraction import extract_url_content
 
