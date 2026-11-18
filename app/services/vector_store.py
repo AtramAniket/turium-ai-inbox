@@ -44,3 +44,9 @@ def store_chunks(
         embeddings=embeddings,
         metadatas=metadatas,
     )
+
+
+def delete_item_chunks(item_id: str) -> None:
+    collection.delete(
+        where={"item_id": item_id}
+    )
