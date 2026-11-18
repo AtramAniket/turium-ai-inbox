@@ -59,6 +59,7 @@ async def ingest_content(
         db.refresh(item)
 
     except Exception:
+        db.rollback()
         item.status = "failed"
         db.commit()
         raise
