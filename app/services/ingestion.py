@@ -6,7 +6,7 @@ from app.schemas.ingest import IngestRequest
 from app.services.extraction import extract_url_content
 from app.services.chunking import chunk_text
 from app.services.embedding import generate_embeddings_for_chunks
-from app.services.vector_store import store_chunks
+from app.services.vector_store import store_chunks, delete_item_chunks
 
 
 async def ingest_content(
@@ -60,8 +60,14 @@ async def ingest_content(
 
     except Exception:
         db.rollback()
-        item.status = "failed"
-        db.commit()
+
+        delete_item_chunks(str(item.id))
+
+        item = db.get(Item, item.id)
+        if item:
+            item.status = "failed"
+            db.commit()
+
         raise
 
     return item
