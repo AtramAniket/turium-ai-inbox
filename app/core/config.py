@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
 
-	debug: bool = True
+	debug: bool = False
 	api_v1_prefix: str = "/api/v1"
 	app_name: str = "Turium AI Inbox API"
 	
