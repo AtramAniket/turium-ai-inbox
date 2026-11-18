@@ -1,5 +1,6 @@
 from app.api.ingest import router as ingest_router
 from app.api.query import router as query_router
+from app.api.items import router as items_router
 
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
@@ -16,4 +17,5 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 app.include_router(ingest_router)
+app.include_router(items_router)
 app.include_router(query_router)
