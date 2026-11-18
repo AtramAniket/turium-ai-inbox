@@ -14,7 +14,12 @@ async def lifespan(app: FastAPI):
 
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(
+    title="Turium AI Knowledge Inbox",
+    description="A knowledge management API powered by RAG.",
+    version="1.0.0",
+    lifespan=lifespan
+)
 
 app.include_router(ingest_router)
 app.include_router(items_router)
