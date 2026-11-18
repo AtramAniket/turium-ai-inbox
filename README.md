@@ -147,7 +147,7 @@ Before running the application, ensure you have:
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_BACKEND_REPOSITORY_URL>
+git clone git@github.com:AtramAniket/turium-ai-inbox.git
 cd turium-ai-inbox
 ```
 
