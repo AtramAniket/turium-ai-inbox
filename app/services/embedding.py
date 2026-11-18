@@ -2,7 +2,7 @@ import os
 import math
 
 from openai import OpenAI
-from app.core.settings import settings
+from app.core.config import settings
 
 model = settings.embedding_model
 api_key = settings.openai_api_key
