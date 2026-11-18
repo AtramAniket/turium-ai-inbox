@@ -1,4 +1,3 @@
-import os
 import math
 
 from openai import OpenAI
