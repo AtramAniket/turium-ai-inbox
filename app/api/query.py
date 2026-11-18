@@ -1,8 +1,12 @@
+import logging
+
 from fastapi import APIRouter, HTTPException
 
 from app.schemas.query import QueryRequest, QueryResponse
 from app.services.retrieval import retrieve_relevant_chunks
 from app.services.generation import generate_answer
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
@@ -21,6 +25,7 @@ def query_knowledge_base(payload: QueryRequest):
         return result
 
     except Exception:
+        logger.exception("Failed to process knowledge query")
         raise HTTPException(
             status_code=500,
             detail="Unable to process your question right now.",
