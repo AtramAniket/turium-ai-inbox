@@ -4,6 +4,10 @@ A lightweight AI-powered knowledge management backend that allows users to save 
 
 Built with **Python, FastAPI, SQLite, ChromaDB and OpenAI**.
 
+## Live API
+
+Interactive API documentation is available at [ai-inbox-8qwb.onrender.com/docs](https://ai-inbox-8qwb.onrender.com/docs).
+
 ## Features
 
 - **Content ingestion:** Save plain-text notes or ingest content from URLs.
