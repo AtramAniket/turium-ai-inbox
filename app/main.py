@@ -26,7 +26,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://ai-inbox-8qwb.onrender.com",
+        "https://ai-inbox-frontend-3qoh.onrender.com",
         "http://localhost:5173",
     ],
     allow_credentials=False,
